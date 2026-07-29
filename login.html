@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-size:16px;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color:lightblue;
+    color:white;
+    padding:15px 30px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+h2{
+    font-size:2rem;
+}
+
+ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1.5rem;
+}
+
+a{
+    text-decoration:none;
+    color:darkblue;
+    font-weight:bold;
+    transition:.3s;
+}
+
+a:hover{
+    color:white;
+}
+
+.notification{
+    font-size:2rem;
+    position:relative;
+}
+
+.badge{
+    width:1rem;
+    height:1rem;
+    background-color:darkblue;
+    border-radius:50%;
+    position:absolute;
+    bottom:1.4rem;
+    left:1.2rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:.8rem;
+    color:white;
+}
+
+.bg{
+    background-image:url("bg1.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+}
+
+.bg::before{
+  
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.25);
+}
+
+.login{
+    background-color:rgba(173,216,230,.9);
+    padding:40px 50px;
+    border-radius:15px;
+    width:400px;
+    
+    position:relative;
+    z-index:1;
+}
+
+.welcome{
+    font-size:28px;
+    margin-bottom:20px;
+    color:white;
+    text-align:center;
+}
+
+label{
+    font-size:18px;
+    color:darkblue;
+    display:block;
+    margin-top:10px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    border:1px solid gray;
+    border-radius:8px;
+    font-size:16px;
+    margin-top:5px;
+    
+    transition:.3s;
+}
+
+
+
+.hi{
+    width:100%;
+    padding:10px;
+    background-color:darkblue;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    
+    transition:.3s;
+}
+
+.hi:hover{
+    background-color:royalblue;
+    transform:scale(1.05);
+}
+.input-group {
+            margin-bottom: 1.25rem;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            color: #6b5b52;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        
+        .password-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(229, 152, 155, 0.3);
+            border-radius: 8px;
+            color: #6b5b52;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        
+        .password-container input {
+            padding-right: 2.8rem;
+        }
+
+        .input-group input:focus {
+            border-color: #e5989b;
+            background: #ffffff;
+        }
+
+        .input-group input::placeholder {
+            color: #b5838d;
+            opacity: 0.5;
+        }
+
+     
+        .toggle-password {
+            position: absolute;
+            right: 1rem;
+            color: #b5838d;
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.2s ease;
+        }
+
+        .toggle-password:hover {
+            color: #6b5b52;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 0.85rem;
+            background-color: #e5989b;
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 4px 12px rgba(229, 152, 155, 0.3);
+        }
+
+    </style>
+</head>
+
+<body>
+    <script src="index.js"></script>
+
+<nav>
+
+    <h2>Codeverse</h2>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div class="notification">
+        <i class="fa-duotone fa-solid fa-bell fa-width-auto"
+        style="--fa-primary-color: rgb(116, 192, 252);
+        --fa-secondary-color: rgb(116, 192, 252);"></i>
+
+        <span class="badge">5</span>
+    </div>
+
+</nav>
+
+<section class="bg">
+
+<div class="login">
+
+<h2 class="welcome">Welcome Back</h2>
+
+<form>
+
+<label>Username:</label>
+<input type="text" placeholder="Enter username">
+
+<br><br>
+
+<div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                        
+                        <i class="fa-regular fa-eye toggle-password" id="togglePasswordIcon"></i>
+                    </div>
+                </div>
+
+<br><br>
+
+<button type="submit" class="hi">Login</button>
+
+</form>
+
+</div>
+
+</section>
+
+</body>
+</html>
